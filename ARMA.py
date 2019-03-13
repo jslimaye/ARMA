@@ -64,4 +64,6 @@ def fit(y,p,q):
 	
 	
 	return final_model
-    
+ 
+def forecast(series,model,n):
+	return
