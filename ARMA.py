@@ -42,10 +42,26 @@ def fit(y,p,q):
         m = np.linalg.solve(a,b)
         models.append(m)
 
-    final model = (list)
-    for j in range(p+q):
-         
+    final_model =  dict()
+	ar = list()
+	ma = list()
+    for j in range(p):
+        a = list()
         for i in range(len(models)):
-            m 
-            
+            a.append(models[i][j])
+        mean = np.mean(a)
+		ar.append(mean)
+		
+	for j in range(p,q):
+        a = list()
+        for i in range(len(models)):
+            a.append(models[i][j])
+        mean = np.mean(a)
+		ma.append(mean)
+	
+	final_model['ar'] = ar
+	final_model['ma'] = ma
+	
+	
+	return final_model
     
